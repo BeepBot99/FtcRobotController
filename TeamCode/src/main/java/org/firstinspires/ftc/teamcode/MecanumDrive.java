@@ -1,6 +1,5 @@
 package org.firstinspires.ftc.teamcode;
 
-import com.arcrobotics.ftclib.drivebase.MecanumDrive;
 import com.arcrobotics.ftclib.gamepad.GamepadEx;
 import com.arcrobotics.ftclib.gamepad.GamepadKeys;
 import com.arcrobotics.ftclib.hardware.motors.Motor;
@@ -12,8 +11,8 @@ import com.qualcomm.robotcore.hardware.IMU;
 import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
 
 @TeleOp
-public class FTCLibTesting extends OpMode {
-    private MecanumDrive mecanumDrive;
+public class MecanumDrive extends OpMode {
+    private com.arcrobotics.ftclib.drivebase.MecanumDrive mecanumDrive;
     private GamepadEx driverOp;
     private IMU imu;
 
@@ -27,7 +26,7 @@ public class FTCLibTesting extends OpMode {
         backLeft.setInverted(true);
         backRight.setInverted(true);
 
-        mecanumDrive = new MecanumDrive(frontLeft, frontRight, backLeft, backRight);
+        mecanumDrive = new com.arcrobotics.ftclib.drivebase.MecanumDrive(frontLeft, frontRight, backLeft, backRight);
 
         imu = hardwareMap.get(IMU.class, "imu");
         imu.initialize(
